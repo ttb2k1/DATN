@@ -5,5 +5,4 @@ const { getListLesson } = require('../controllers/practiceController');
 
 router.get('/listLesson', getListLesson);
 
-
 module.exports = router;

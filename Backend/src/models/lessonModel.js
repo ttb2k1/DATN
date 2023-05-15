@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 const lessonSchema = new mongoose.Schema({
   level: {
     type: String,
+    required: true,
+  },
+  name: {
+    type: String,
   },
 });
 

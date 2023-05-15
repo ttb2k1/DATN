@@ -9,5 +9,8 @@ router.get('/', (req, res) => {
 });
 
 router.use('/api/v1/practice', require('./routes/practiceRoute'));
+router.use('/api/v1/listKanji', require('./routes/kanjiRoute'));
+router.use('/api/v1/lesson', require('./routes/lessonRoute'));
+router.use('/api/v1/research', require('./routes/researchRoute'));
 
 module.exports = router;
