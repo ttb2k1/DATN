@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const kanjiLearnSchema = new mongoose.Schema({});
+const LearnSchema = new mongoose.Schema({});
 
-const Kanji = mongoose.model('Kanji', kanjiLearnSchema);
+const Learn = mongoose.model('Learn', LearnSchema);
 module.exports = Kanji;

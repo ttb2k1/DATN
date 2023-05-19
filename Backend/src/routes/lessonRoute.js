@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const { postLesson } = require('../controllers/lessonController');
+const lessonController = require('../controllers/lessonController');
 
-router.post('/', postLesson);
+router.post('/', lessonController.postLesson);
 
 module.exports = router;
