@@ -2,11 +2,17 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const BoxComponent = ({ title, onPress, icon }) => {
+const BoxComponent = ({ title, onPress, icon, height, width }) => {
+  const boxStyle = {
+    ...styles.box,
+    width: width,
+    height: height,
+  };
+
   return (
-    <TouchableOpacity style={styles.box} onPress={onPress}>
+    <TouchableOpacity style={boxStyle} onPress={onPress}>
       <View style={styles.contentContainer}>
-        <Icon name={icon} size={30} color='black' marginBottom={5} />
+        {icon && <Icon name={icon} size={30} color='black' marginBottom={5} />}
         <Text style={styles.text}>{title}</Text>
       </View>
     </TouchableOpacity>
@@ -15,8 +21,6 @@ const BoxComponent = ({ title, onPress, icon }) => {
 
 const styles = StyleSheet.create({
   box: {
-    width: 150,
-    height: 150,
     backgroundColor: 'white',
     borderRadius: 150 * 0.08,
     shadowColor: '#000',

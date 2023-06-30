@@ -3,7 +3,9 @@ import { StatusBar } from 'react-native';
 import TranslateScreen from './src/screens/TranslateScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import LearnScreen from './src/screens/LearnScreen';
-import PracticeScreen from './src/screens/PracticeScreen';
+import DetailPracticeScreen from './src/screens/PracticeScreen';
+import DetailLearnScreen from './src/screens/DetailLearnScreen';
+import PracticeDetailScreen from './src/screens/DetailPracticeScreen';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -25,7 +27,12 @@ export default function App() {
           <Stack.Screen name='Translate' component={TranslateScreen} />
           <Stack.Screen name='Home' component={HomeScreen} />
           <Stack.Screen name='Learn' component={LearnScreen} />
-          <Stack.Screen name='Practice' component={PracticeScreen} />
+          <Stack.Screen name='Practice' component={DetailPracticeScreen} />
+          <Stack.Screen name='DetailLearn' component={DetailLearnScreen} />
+          <Stack.Screen
+            name='DetailPractice'
+            component={PracticeDetailScreen}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

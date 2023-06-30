@@ -1,13 +1,18 @@
 import axios from 'axios';
+import { parse, stringify } from 'qs';
 
-const EXPO_URI = 'http://localhost:5000/api/v1';
+export const BASE_API_URL = 'http://192.168.8.78:5000/';
 
 const axiosClient = axios.create({
-  baseURL: EXPO_URI,
+  baseURL: BASE_API_URL,
   headers: {
+    accept: 'application/json',
     'content-type': 'application/json',
   },
-  paramsSerializer: (params) => queryString.stringify(params),
+  paramsSerializer: {
+    encode: parse,
+    serialize: stringify,
+  },
 });
 
 export default axiosClient;

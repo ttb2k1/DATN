@@ -7,15 +7,16 @@ const HomeScreen = ({ navigation }) => {
   const windowWidth = Dimensions.get('window').width;
   const columnWidth = 150;
   const numColumns = Math.floor(windowWidth / columnWidth);
+  // console.log(numColumns);
 
   const data = [
     {
-      title: 'Translate Screen',
+      title: 'Translate',
       navigateTo: 'Translate',
       icon: 'search',
     },
-    { title: 'Learn Screen', navigateTo: 'Learn', icon: 'book' },
-    { title: 'Practice Screen', navigateTo: 'Practice', icon: 'edit' },
+    { title: 'Learn', navigateTo: 'Learn', icon: 'book' },
+    { title: 'Practice', navigateTo: 'Practice', icon: 'edit' },
   ];
 
   const calculateSpacing = () => {
@@ -43,6 +44,8 @@ const HomeScreen = ({ navigation }) => {
                     onPress={() => navigation.navigate(item.navigateTo)}
                     title={item.title}
                     icon={item.icon}
+                    height={150}
+                    width={150}
                   />
                 </View>
               ))}
